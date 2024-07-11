@@ -25,8 +25,7 @@ const contact = [
 ]
 
 app.get('/',(req, res)=>{
-    console.log("hello")
-    res.send(contact)
+    res.send(`<p>The PhoneBook have info for 4 people </br> </br> ${Date()} </p>`)
 })
 
 app.listen(3000)
