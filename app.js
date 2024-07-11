@@ -25,10 +25,11 @@ let persons = [
 ]
 
 
-app.get('/api/persons/:id',(req, res)=>{
+app.delete('/api/persons/:id', (req, res) => {
     const id = req.params.id
-    const person = persons.find(person => person.id === id)
-    res.send(person)
-})
+    persons = persons.filter(person => person.id !== id)
+  
+    res.status(204).end()
+  })
 
 app.listen(3001)
