@@ -19,6 +19,11 @@ app.get('/create', async(req, res)=>{
   let phonebookDeletedData = await phonebookModel.findOneAndDelete({name:"Ada Lovelace"})
   res.send(phonebookDeletedData)
  })
+
+ app.get('/read', async(req, res)=>{
+  let phonebookDataRead = await phonebookModel.find({name: "Arto Vihavainen"})
+  res.send(phonebookDataRead)
+ })
  
 
 app.listen(3000)
